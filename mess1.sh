@@ -7,8 +7,6 @@ drop database if exists dbtest;
 CREATE DATABASE dbtest;
 
 #Create user
-DROP USER ‘dbtestuser’@‘localhost’;
-CREATE USER 'dbtest'@'localhost' IDENTIFIED BY 'dbpassword';
 GRANT ALL PRIVILEGES ON dbtest.* TO dbtestuser@localhost IDENTIFIED BY 'dbpassword';
 
 
