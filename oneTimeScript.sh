@@ -1,4 +1,4 @@
-START!!!
+
 #!/bin/bash
 
 
