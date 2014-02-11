@@ -66,6 +66,7 @@ sudo service mysql start
 ----CREATE MYSQL TABLES---
 
 #Connect to MySQL
+#Connect to MySQL
 cat <<FINISH | mysql -uroot -ppassword
 
 #Create database
@@ -73,18 +74,16 @@ drop database if exists dbtest;
 CREATE DATABASE dbtest;
 
 #Create user
-DROP USER ‘dbtestuser’@‘localhost’;
-CREATE USER 'dbtest'@'localhost' IDENTIFIED BY 'dbpassword';
-GRANT ALL PRIVILEGES ON dbtest.* TO dbtestuser@localhost IDENTIFIED BY 'dbpassword';
-
+CREATE USER 'dbtestuser'@'localhost' IDENTIFIED BY 'dbpassword';
+GRANT ALL PRIVILEGES ON dbtest.* TO 'dbtestuser'@'localhost' IDENTIFIED BY 'dbpassword';
 
 #Create table
 use dbtest;
 drop table if exists custdetails;
-create table if not exists custdetails 
+create table if not exists custdetails
 (
-name VARCHAR(30)   NOT NULL DEFAULT '',
-address VARCHAR(30)   NOT NULL DEFAULT ''
+name VARCHAR(30) NOT NULL DEFAULT '',
+address VARCHAR(30) NOT NULL DEFAULT ''
 );
 
 #Insert test data into table
@@ -94,7 +93,7 @@ select * from custdetails;
 FINISH
 
 #Restart services
-sudo service apache2 restart 
+sudo service apache2 restart
 sudo service mysql restart
 
 #Cleanup - remove Sandbox directory
