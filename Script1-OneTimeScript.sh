@@ -28,6 +28,9 @@ apt-get -q -y install mysql-server mysql-client
 
 # --------- INSTALLING PERL -------------
 
+#Below command enables ‘make’ command on Ubuntu which is needed to install the libraries.
+sudo apt-get install build-essential
+
 #Install perl library helper routines:
 sudo apt-get -q -y install curl gcc-4.7
 sudo curl -L http://cpanmin.us | perl - --sudo App::cpanminus
