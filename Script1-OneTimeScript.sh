@@ -59,6 +59,7 @@ sudo cp -r Apache/www/* /var/www
 sudo cp -r Apache/cgi-bin/* /usr/lib/cgi-bin
 
 #set permissions appropriately
+cd /
 sudo chmod a+x usr/lib/cgi-bin/*
 sudo chmod a+x /var/www/*
 
