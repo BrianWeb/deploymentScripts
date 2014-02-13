@@ -1,4 +1,4 @@
-sudo ./Script1-PreDeploymentCheckScript 
+sudo ./Script1-HealthCheckPreDeploy.sh
 
 The script is shown below with comments for each function:
 
